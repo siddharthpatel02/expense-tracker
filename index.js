@@ -4,6 +4,8 @@ const category = document.querySelector("#category");
 const list = document.querySelector("#list");
 const deleteBtn = document.querySelector("#deleteBtn");
 const editBtn = document.querySelector("#editBtn");
+const submitBtn = document.querySelector("#submitBtn");
+console.log(submitBtn);
 loadItems();
 let isEditing = false;
 let editIndex = null;
@@ -63,7 +65,11 @@ function submitForm(event) {
     isEditing = false;
     editIndex = null;
     editKey = null;
+    submitBtn.innerHTML = "Add Expense";
   }
+  expenseAmount.value = "";
+  description.value = "";
+  category.value = "";
 }
 
 function deleteItem(event) {
@@ -98,6 +104,7 @@ function editItem(event) {
     isEditing = true;
     editIndex = index;
     editKey = key;
+    submitBtn.innerHTML = "Done";
   }
 }
 
